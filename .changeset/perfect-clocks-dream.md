@@ -1,5 +1,0 @@
----
-'@shawnponents/source': patch
----
-
-beginning
