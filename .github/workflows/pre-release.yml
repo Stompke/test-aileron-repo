@@ -42,7 +42,7 @@ jobs:
       #     prop_path: "mode"
       # - run: |
       #     echo ${{steps.json_properties.outputs.value}}
-      - if: steps.json_properties.outputs.value == 'exit'
+      - if: fromJson(steps.set_var.outputs.packageJson).mode == 'exit'
         run: npx changeset pre enter next
       - name: Create Release Pull Request or Publish to npm
         id: changesets
