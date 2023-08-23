@@ -21,6 +21,16 @@ jobs:
           node-version: 16
       - name: Install Dependencies
         run: npm ci
+      - name: Changest Status
+        run: npx changeset status --output changeset-status.json
+      - name: get properties
+        id: json_properties
+        uses: zoexx/github-action-json-file-properties@release
+        with:
+          file_path: "changeset-status.json"
+      - run: |
+          echo ${{steps.json_properties.outputs.changesets}}
+          echo ${{steps.json_properties.outputs.preState.mode}}
       - name: Enter Pre Release
         run: npx changeset pre enter next
       - name: Create Release Pull Request or Publish to npm
