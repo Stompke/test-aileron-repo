@@ -23,14 +23,21 @@ jobs:
         run: npm ci
       - name: Changest Status
         run: npx changeset status --output changeset-status.json
-      - name: get properties
-        id: json_properties
-        uses: zoexx/github-action-json-file-properties@release
+      - name: Read package.json
+        id: package
+        uses: juliangruber/read-file-action@v1
         with:
-          file_path: "./changeset/pre.json"
-          prop_path: "mode"
-      - run: |
-          echo ${{steps.json_properties.outputs.value}}
+          path: ./changeset/pre.json
+      - name: Echo package.json
+        run: echo "${{ steps.package.outputs.content }}"
+      # - name: get properties
+      #   id: json_properties
+      #   uses: zoexx/github-action-json-file-properties@release
+      #   with:
+      #     file_path: "./changeset/pre.json"
+      #     prop_path: "mode"
+      # - run: |
+      #     echo ${{steps.json_properties.outputs.value}}
       - if: steps.json_properties.outputs.value == 'exit'
         run: npx changeset pre enter next
       - name: Create Release Pull Request or Publish to npm
