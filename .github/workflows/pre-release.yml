@@ -27,11 +27,12 @@ jobs:
         id: json_properties
         uses: zoexx/github-action-json-file-properties@release
         with:
-          file_path: "changeset-status.json"
-          prop_path: "preState.mode"
+          file_path: "./changeset/pre.json"
+          prop_path: "mode"
       - run: |
           echo ${{steps.json_properties.outputs.value}}
-      - name: Enter Pre Release
+      - if: {steps.json_properties.outputs.value == 'exit'}
+        name: Enter Pre Release
         run: npx changeset pre enter next
       - name: Create Release Pull Request or Publish to npm
         id: changesets
