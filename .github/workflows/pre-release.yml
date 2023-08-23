@@ -1,9 +1,9 @@
-name: Release
+name: Pre Release
 
 on:
   push:
     branches:
-      - 'release/**'
+      - main
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -21,16 +21,16 @@ jobs:
           node-version: 16
       - name: Install Dependencies
         run: npm ci
-      - name: Exit Pre Release
-        run: npx changeset pre exit
+      - name: Enter Pre Release
+        run: npx changeset pre enter next
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: node tools/scripts/publish-to-npm.js
-          commit: "ci(changesets): release packages"
-          title: "ci(changesets): release packages"
+          commit: "ci(changesets): pre release packages"
+          title: "ci(changesets): pre release packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
