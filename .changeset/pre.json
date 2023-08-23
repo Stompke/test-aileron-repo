@@ -5,5 +5,8 @@
     "@shawnponents/is-even": "0.1.0",
     "@shawnponents/is-odd": "0.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "fifty-toes-admire",
+    "wet-yaks-smell"
+  ]
 }
