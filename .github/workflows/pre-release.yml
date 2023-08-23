@@ -8,8 +8,8 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
-    name: Release
+  pre-release:
+    name: Pre Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -30,7 +30,7 @@ jobs:
           file_path: "changeset-status.json"
           prop_path: "preState.mode"
       - run: |
-          echo ${{steps.repository_type.outputs.value}}
+          echo ${{steps.json_properties.outputs.value}}
       - name: Enter Pre Release
         run: npx changeset pre enter next
       - name: Create Release Pull Request or Publish to npm
