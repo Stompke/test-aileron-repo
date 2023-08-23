@@ -32,7 +32,6 @@ jobs:
       - run: |
           echo ${{steps.json_properties.outputs.value}}
       - if: {steps.json_properties.outputs.value == 'exit'}
-        name: Enter Pre Release
         run: npx changeset pre enter next
       - name: Create Release Pull Request or Publish to npm
         id: changesets
