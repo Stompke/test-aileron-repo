@@ -25,7 +25,7 @@ jobs:
         run: npx changeset status --output changeset-status.json
       - id: set_var
         run: |
-          content=`cat ${GITHUB_WORKSPACE}/changeset/pre.json`
+          content=`cat ${GITHUB_WORKSPACE}/.changeset/pre.json`
           # the following lines are only required for multi line json
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
