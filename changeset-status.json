@@ -1,0 +1,41 @@
+{
+  "changesets": [
+    {
+      "releases": [
+        {
+          "name": "@shawnponents/is-odd",
+          "type": "minor"
+        }
+      ],
+      "summary": "Minor change to is-odd with testing logs",
+      "id": "four-seas-carry"
+    }
+  ],
+  "releases": [
+    {
+      "name": "@shawnponents/is-odd",
+      "type": "minor",
+      "oldVersion": "0.1.0-next.0",
+      "changesets": [
+        "four-seas-carry"
+      ],
+      "newVersion": "0.1.0-next.1"
+    }
+  ],
+  "preState": {
+    "mode": "pre",
+    "tag": "next",
+    "initialVersions": {
+      "@shawnponents/source": "0.0.0",
+      "@shawnponents/is-even": "0.0.1",
+      "@shawnponents/is-odd": "0.0.1"
+    },
+    "changesets": [
+      "brave-sloths-deny",
+      "four-seas-carry",
+      "lemon-numbers-joke",
+      "silly-cameras-crash",
+      "tough-zoos-attend"
+    ]
+  }
+}
