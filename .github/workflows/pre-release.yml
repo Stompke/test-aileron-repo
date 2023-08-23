@@ -29,7 +29,6 @@ jobs:
         with:
           file_path: "changeset-status.json"
       - run: |
-          echo ${{steps.json_properties.outputs.changesets}}
           echo ${{steps.json_properties.outputs.preState.mode}}
       - name: Enter Pre Release
         run: npx changeset pre enter next
