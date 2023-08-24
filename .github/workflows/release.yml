@@ -39,7 +39,12 @@ jobs:
         run: |
           echo "${{fromJson(steps.set_var.outputs.packageJson).mode}}"
       - if: steps.check_files.outputs.files_exists == 'true' && fromJson(steps.set_var.outputs.packageJson).mode == 'pre'
-        run: npx changeset pre exit
+        run: |
+          npx changeset pre exit
+          git add .
+          git commit -m 'ci(changesets): exit pre release';
+          git push origin main;
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
