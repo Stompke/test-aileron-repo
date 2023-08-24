@@ -1,5 +1,11 @@
 # @shawnponents/is-even
 
+## 0.3.0-next.0
+
+### Minor Changes
+
+- 01b2e53: Test 2
+
 ## 0.2.0
 
 ### Minor Changes
