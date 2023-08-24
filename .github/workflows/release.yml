@@ -47,6 +47,9 @@ jobs:
           git commit -m 'ci(changesets): exit pre release';
           git push origin main;
 
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
