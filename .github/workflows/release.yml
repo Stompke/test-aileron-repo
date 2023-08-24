@@ -41,6 +41,8 @@ jobs:
       - if: steps.check_files.outputs.files_exists == 'true' && fromJson(steps.set_var.outputs.packageJson).mode == 'pre'
         run: |
           npx changeset pre exit
+          git config --global user.email "shawntompke@gmail.com"
+          git config --global user.name "Shawn Tompke"
           git add .
           git commit -m 'ci(changesets): exit pre release';
           git push origin main;
