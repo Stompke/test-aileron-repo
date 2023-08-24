@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 0.2.0
+
+### Minor Changes
+
+- 4459a7b: Adding test 3
+
 ## 0.2.0-next.0
 
 ### Minor Changes
