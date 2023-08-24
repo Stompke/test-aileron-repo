@@ -21,9 +21,12 @@ jobs:
           node-version: 16
       - name: Install Dependencies
         run: npm ci
-      - name: Changest Status
-        run: npx changeset status --output changeset-status.json
-      - id: set_var
+      - id: check_files
+        uses: andstor/file-existence-action@v2.0.0
+        with:
+          files: ".changeset/pre.json"
+      - if: steps.check_files.outputs.files_exists == 'true'
+        id: set_var
         run: |
           content=`cat ${GITHUB_WORKSPACE}/.changeset/pre.json`
           # the following lines are only required for multi line json
@@ -32,7 +35,8 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           # end of optional handling for multi line json
           echo "::set-output name=packageJson::$content"
-      - run: |
+      - if: steps.check_files.outputs.files_exists == 'true'
+        run: |
           echo "${{fromJson(steps.set_var.outputs.packageJson).mode}}"
       # - name: get properties
       #   id: json_properties
@@ -42,7 +46,7 @@ jobs:
       #     prop_path: "mode"
       # - run: |
       #     echo ${{steps.json_properties.outputs.value}}
-      - if: fromJson(steps.set_var.outputs.packageJson).mode == 'exit'
+      - if: steps.check_files.outputs.files_exists == 'false' || fromJson(steps.set_var.outputs.packageJson).mode == 'exit'
         run: npx changeset pre enter next
       - name: Create Release Pull Request or Publish to npm
         id: changesets
