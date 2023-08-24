@@ -3,7 +3,8 @@ name: Pre Release
 on:
   push:
     branches:
-      - "next/**"
+      - next
+      - hotfix
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
