@@ -19,7 +19,12 @@ jobs:
           node-version: 16
       - name: Install Dependencies
         run: npm ci
-      - id: set_var
+      - id: check_files
+        uses: andstor/file-existence-action@v2.0.0
+        with:
+          files: ".changeset/pre.json"
+      - if: steps.check_files.outputs.files_exists == 'true'
+        id: set_var
         run: |
           content=`cat ${GITHUB_WORKSPACE}/.changeset/pre.json`
           # the following lines are only required for multi line json
@@ -28,7 +33,8 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           # end of optional handling for multi line json
           echo "::set-output name=packageJson::$content"
-      - run: |
+      - if: steps.check_files.outputs.files_exists == 'true'
+        run: |
           echo "${{fromJson(steps.set_var.outputs.packageJson).mode}}"
       - if: fromJson(steps.set_var.outputs.packageJson).mode == 'pre'
         run: npx changeset pre exit
