@@ -2,6 +2,6 @@ import { isEven } from '@shawnponents/is-even';
 
 
 export function isOdd(x: number): boolean {
-  console.log("test 3");
+  console.log("test 5");
   return !isEven(x);
 }
