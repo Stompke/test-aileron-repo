@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 0.2.1
+
+### Patch Changes
+
+- 0ea9c9b: test 5
+
 ## 0.2.1-next.0
 
 ### Patch Changes
