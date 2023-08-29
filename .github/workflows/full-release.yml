@@ -19,6 +19,17 @@ jobs:
           node-version: 16
       - name: Install Dependencies
         run: npm ci
+      - name: Run Full Release
+        run: |
+          npx changeset pre exit
+          npx changeset version
+          git add .
+          git commit -m "Exit prerelease mode and version packages"
+          npx changeset publish
+          git push --follow-tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       # - id: check_files
       #   uses: andstor/file-existence-action@v2.0.0
       #   with:
