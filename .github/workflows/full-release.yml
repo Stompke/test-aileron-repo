@@ -43,7 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: 'release-branch/${{ github.event.pull_request.head.sha }}}'
+          branch: 'refs/heads/release/${{ github.event.pull_request.head.sha }}'
           sha: '${{ github.event.pull_request.head.sha }}'
 
   # enter-pre-release:
