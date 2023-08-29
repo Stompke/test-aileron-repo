@@ -7,7 +7,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   exit-pre-release:
-    name: Full Release
+    name: Exit Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -74,6 +74,9 @@ jobs:
       #   run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
 
   publish:
+    name: Full Release
+    runs-on: ubuntu-latest
+    steps:
     needs: exit-pre-release
       - name: Checkout Repo
         uses: actions/checkout@v3
