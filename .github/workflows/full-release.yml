@@ -23,6 +23,8 @@ jobs:
         run: |
           npx changeset pre exit
           npx changeset version
+          git config --global user.email "shawntompke@gmail.com"
+          git config --global user.name "Shawn Tompke"
           git add .
           git commit -m "Exit prerelease mode and version packages"
           npx changeset publish
