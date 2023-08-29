@@ -1,9 +1,9 @@
 {
-  "mode": "exit",
+  "mode": "pre",
   "tag": "next",
   "initialVersions": {
     "@shawnponents/is-even": "0.2.0",
-    "@shawnponents/is-odd": "0.2.1"
+    "@shawnponents/is-odd": "0.3.0-next.0"
   },
   "changesets": [
     "little-coins-worry"
