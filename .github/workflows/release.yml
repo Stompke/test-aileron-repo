@@ -1,4 +1,4 @@
-name: Release
+name: Release Workflow
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
-    name: Release
+    name: Release Workflow
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
