@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Exit pre release
         run: |
@@ -42,6 +44,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
