@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@shawnponents/is-even": "0.4.0",
+    "@shawnponents/is-odd": "0.4.1"
+  },
+  "changesets": [
+    "ninety-parrots-end"
+  ]
+}

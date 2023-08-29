@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 1.0.0-next.0
+
+### Major Changes
+
+- fd36396: major change is odd
+
 ## 0.4.1
 
 ### Patch Changes
