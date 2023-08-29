@@ -2,6 +2,10 @@ name: Full Release
 
 on:
   workflow_dispatch:
+    inputs:
+      releaseName:
+        description: 'Name of release (e.g. release/072308)'
+        required: true
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -35,16 +39,11 @@ jobs:
           git add .
           git commit -m "Exit prerelease"
           git push
+          git checkout -b release/${{ github.event.inputs.releaseName }}
+          git push origin release/${{ github.event.inputs.releaseName }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Create release branch
-        uses: peterjgrainger/action-create-branch@v2.2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          branch: 'refs/heads/release/${{ github.event.pull_request.head.sha }}'
-          sha: '${{ github.event.pull_request.head.sha }}'
 
   # enter-pre-release:
   #   name: Enter Pre Release
