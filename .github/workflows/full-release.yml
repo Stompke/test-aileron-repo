@@ -43,31 +43,31 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: 'release-branch'
+          branch: 'release-branch/${{ github.event.pull_request.head.sha }}}'
           sha: '${{ github.event.pull_request.head.sha }}'
 
-  enter-pre-release:
-    name: Enter Pre Release
-    needs: exit-pre-release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
+  # enter-pre-release:
+  #   name: Enter Pre Release
+  #   needs: exit-pre-release
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Repo
+  #       uses: actions/checkout@v3
 
-      - name: Setup Node.js 16
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - name: Install Dependencies
-        run: npm ci
-      - name: Enter pre release
-        run: |
-          npx changeset pre enter next
-          git config --global user.email "shawntompke@gmail.com"
-          git config --global user.name "Shawn Tompke"
-          git add .
-          git commit -m "Enter prerelease mode"
-          git push
+  #     - name: Setup Node.js 16
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 16
+  #     - name: Install Dependencies
+  #       run: npm ci
+  #     - name: Enter pre release
+  #       run: |
+  #         npx changeset pre enter next
+  #         git config --global user.email "shawntompke@gmail.com"
+  #         git config --global user.name "Shawn Tompke"
+  #         git add .
+  #         git commit -m "Enter prerelease mode"
+  #         git push
 
   # publish:
   #   name: Full Release
