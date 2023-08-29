@@ -39,7 +39,7 @@ jobs:
       # - if: steps.check_files.outputs.files_exists == 'true' && fromJson(steps.set_var.outputs.packageJson).mode == 'pre'
       run: |
         npx changeset pre exit
-        npx changeset version
+        npx changeset version --otp=${{ secrets.NPM_TOKEN }}
         git add .
         git commit -m "Exit prerelease mode and version packages"
         npx changeset publish --otp=${{ secrets.NPM_TOKEN }}
