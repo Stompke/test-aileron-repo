@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 0.4.0-next.0
+
+### Minor Changes
+
+- ab6e253: do it again
+
 ## 0.3.0
 
 ### Minor Changes

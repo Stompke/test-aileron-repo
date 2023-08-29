@@ -5,5 +5,7 @@
     "@shawnponents/is-even": "0.3.0",
     "@shawnponents/is-odd": "0.3.0"
   },
-  "changesets": []
+  "changesets": [
+    "silent-radios-beg"
+  ]
 }
