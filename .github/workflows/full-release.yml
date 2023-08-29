@@ -35,12 +35,17 @@ jobs:
           git add .
           git commit -m "Exit prerelease"
           git push
-          npx changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  publish:
+        - name: Create release branch
+          uses: peterjgrainger/action-create-branch@v2.2.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            branch: 'release-branch'
+            sha: '${{ github.event.pull_request.head.sha }}'
+enter-pre-release:
     name: Full Release
     needs: exit-pre-release
     runs-on: ubuntu-latest
@@ -54,14 +59,37 @@ jobs:
           node-version: 16
       - name: Install Dependencies
         run: npm ci
+      - name: Enter pre release
+        run: |
+          npx changeset pre enter next
+          git config --global user.email "shawntompke@gmail.com"
+          git config --global user.name "Shawn Tompke"
+          git add .
+          git commit -m "Enter prerelease mode"
+          git push
 
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          # This expects you to have a script called release which does a build for your packages and calls changeset publish
-          commit: "ci(changesets): release packages"
-          title: "ci(changesets): release packages"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  # publish:
+  #   name: Full Release
+  #   needs: exit-pre-release
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Repo
+  #       uses: actions/checkout@v3
+
+  #     - name: Setup Node.js 16
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 16
+  #     - name: Install Dependencies
+  #       run: npm ci
+
+  #     - name: Create Release Pull Request or Publish to npm
+  #       id: changesets
+  #       uses: changesets/action@v1
+  #       with:
+  #         # This expects you to have a script called release which does a build for your packages and calls changeset publish
+  #         commit: "ci(changesets): release packages"
+  #         title: "ci(changesets): release packages"
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
