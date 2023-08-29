@@ -1,5 +1,11 @@
 # @shawnponents/is-even
 
+## 0.3.0
+
+### Minor Changes
+
+- 2c40b54: some stuff
+
 ## 0.2.0
 
 ### Minor Changes
