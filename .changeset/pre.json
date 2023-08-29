@@ -6,6 +6,7 @@
     "@shawnponents/is-odd": "0.4.0"
   },
   "changesets": [
-    "fast-rivers-lie"
+    "fast-rivers-lie",
+    "soft-gifts-double"
   ]
 }
