@@ -1,16 +1,15 @@
-name: Pre Release
+name: Release
 
 on:
   push:
     branches:
       - main
-      - hotfix
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  pre-release:
-    name: Pre Release
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -39,24 +38,32 @@ jobs:
       - if: steps.check_files.outputs.files_exists == 'true'
         run: |
           echo "${{fromJson(steps.set_var.outputs.packageJson).mode}}"
-      # - name: get properties
-      #   id: json_properties
-      #   uses: zoexx/github-action-json-file-properties@release
-      #   with:
-      #     file_path: "./changeset/pre.json"
-      #     prop_path: "mode"
-      # - run: |
-      #     echo ${{steps.json_properties.outputs.value}}
-      - if: steps.check_files.outputs.files_exists == 'false' || fromJson(steps.set_var.outputs.packageJson).mode == 'exit'
-        run: npx changeset pre enter next
+      - if: steps.check_files.outputs.files_exists == 'true' && fromJson(steps.set_var.outputs.packageJson).mode == 'pre'
+        run: |
+          npx changeset pre exit
+          git config --global user.email "shawntompke@gmail.com"
+          git config --global user.name "Shawn Tompke"
+          git add .
+          git commit -m 'ci(changesets): exit pre release';
+          git push origin main;
+
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install Dependencies
+        run: npm ci
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: node tools/scripts/publish-to-npm.js
-          commit: "ci(changesets): pre release packages"
-          title: "ci(changesets): pre release packages"
+          commit: "ci(changesets): release packages"
+          title: "ci(changesets): release packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
