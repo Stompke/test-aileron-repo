@@ -21,7 +21,7 @@ jobs:
         run: npm ci
       - shell: bash
         run: |
-          echo -e "registry=https://registry.npmjs.org/:_password=[St0necr0ft]//https://registry.npmjs.org/:username=[stompke]//https://registry.npmjs.org/:email=[shawntompke@gmail.com]//https://registry.npmjs.org/:always-auth=true" > $HOME/.npmrc
+          echo -e "registry=https://registry.npmjs.org///registry.npmjs.org/:_password=St0necr0ft//registry.npmjs.org/:username=stompke//registry.npmjs.org/:email=shawntompke@gmail.com//registry.npmjs.org/:always-auth=true" > $HOME/.npmrc
           
       - name: Run Full Release
         run: |
