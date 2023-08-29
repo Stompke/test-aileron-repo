@@ -42,7 +42,7 @@ jobs:
         npx changeset version
         git add .
         git commit -m "Exit prerelease mode and version packages"
-        npx changeset publish
+        npx changeset publish --otp=${{ secrets.NPM_TOKEN }}
         git push --follow-tags
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
