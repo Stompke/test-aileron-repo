@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 0.4.1
+
+### Patch Changes
+
+- d0b877b: patch to is odd
+
 ## 0.4.1-next.0
 
 ### Patch Changes
