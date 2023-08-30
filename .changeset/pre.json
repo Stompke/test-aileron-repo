@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@shawnponents/is-even": "0.5.0",
+    "@shawnponents/is-odd": "1.0.0"
+  },
+  "changesets": [
+    "beige-chairs-judge"
+  ]
+}
