@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 1.1.0
+
+### Minor Changes
+
+- f51a8a5: something here
+
 ## 1.1.0-next.0
 
 ### Minor Changes
