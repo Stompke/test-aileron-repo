@@ -1,5 +1,11 @@
 # @shawnponents/is-even
 
+## 0.6.0
+
+### Minor Changes
+
+- 424323d: something
+
 ## 0.6.0-next.0
 
 ### Minor Changes
