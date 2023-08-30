@@ -1,5 +1,17 @@
 # @shawnponents/is-even
 
+## 0.5.0
+
+### Minor Changes
+
+- 6e59063: testing
+
+## 0.5.0-next.0
+
+### Minor Changes
+
+- 6e59063: testing
+
 ## 0.4.0
 
 ### Minor Changes
