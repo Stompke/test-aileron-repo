@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 1.1.1
+
+### Patch Changes
+
+- 95739ab: Patch for is-odd
+
 ## 1.1.1-next.0
 
 ### Patch Changes
