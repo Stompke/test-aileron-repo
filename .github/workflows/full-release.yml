@@ -39,7 +39,7 @@ jobs:
           git config --global user.email "shawntompke@gmail.com"
           git config --global user.name "Shawn Tompke"
           git add .
-          git commit -m "Exit prerelease"
+          git commit -m "Version Packages"
           git push
           git checkout -b release/${{ github.event.inputs.releaseName }}
           git push origin release/${{ github.event.inputs.releaseName }}
