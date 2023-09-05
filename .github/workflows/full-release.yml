@@ -14,6 +14,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   exit-pre-release:
+    if: github.event.inputs.releaseName === "1234"
     name: Exit Release
     runs-on: ubuntu-latest
     steps:
