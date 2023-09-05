@@ -4,7 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       releaseName:
-        description: 'Name of release (e.g. release/072308)'
+        description: 'Name of release (e.g. 0905231120) Sept 5 2023 11:20am'
+        required: true
+      key:
+        description: 'the key for initializing the release'
         required: true
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
