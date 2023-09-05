@@ -14,7 +14,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   exit-pre-release:
-    if: github.event.inputs.releaseName === secrets.RELEASE_KEY
+    if: github.event.inputs.releaseName == secrets.RELEASE_KEY
     name: Exit Release
     runs-on: ubuntu-latest
     steps:
