@@ -1,5 +1,11 @@
 # @shawnponents/is-even
 
+## 1.0.0
+
+### Major Changes
+
+- 5d7b8af: Major Hotfix to is even
+
 ## 1.0.0-next.0
 
 ### Major Changes
