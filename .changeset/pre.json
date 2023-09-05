@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@shawnponents/is-even": "0.7.0",
+    "@shawnponents/is-odd": "1.1.1"
+  },
+  "changesets": [
+    "nasty-horses-tease"
+  ]
+}
