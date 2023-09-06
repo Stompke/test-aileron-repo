@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 1.2.0-next.0
+
+### Minor Changes
+
+- d4fd52c: something coool
+
 ## 1.1.1
 
 ### Patch Changes
