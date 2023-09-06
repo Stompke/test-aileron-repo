@@ -32,7 +32,7 @@ jobs:
   exit-pre-release:
     name: Exit Release
     runs-on: ubuntu-latest
-    depends-on: check-key
+    needs: check-key
     if: env.NEED == 'true'
     steps:
       - name: Checkout Repo
