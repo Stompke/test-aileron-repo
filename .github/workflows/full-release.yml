@@ -13,8 +13,8 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  exit-pre-release:
-    name: Exit Release
+  check-key:
+    name: Check Key for Release
     runs-on: ubuntu-latest
     steps:
       - name: Set env NEED
@@ -27,6 +27,12 @@ jobs:
       - name: Skip the deploy
         if: env.NEED == 'true'
         run: echo "Correct Key Entered, starting deploy..."
+
+  exit-pre-release:
+    name: Exit Release
+    runs-on: ubuntu-latest
+    depends-on: check-key
+    steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
