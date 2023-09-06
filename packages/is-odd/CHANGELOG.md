@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 1.3.0
+
+### Minor Changes
+
+- 527bcef: testhing thkl
+
 ## 1.3.0-next.0
 
 ### Minor Changes
