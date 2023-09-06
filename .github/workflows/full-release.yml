@@ -14,10 +14,19 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   exit-pre-release:
-    if: github.event.inputs.key == ${{secrets.RELEASE_KEY}}
     name: Exit Release
     runs-on: ubuntu-latest
     steps:
+      - name: Set env NEED
+        run: |
+          if [[ $github.event.inputs.key == $secrets.RELEASE_KEY ]]; then
+              echo "NEED=true" >> "$GITHUB_ENV"
+          else
+              echo "NEED=false" >> "$GITHUB_ENV"
+          fi
+      - name: Skip Deploy?
+        if: env.NEED != 'true'
+        run: echo "Only pushing to 'master' causes automatic deployment"
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
