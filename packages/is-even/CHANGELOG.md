@@ -1,5 +1,12 @@
 # @shawnponents/is-even
 
+## 1.1.0
+
+### Minor Changes
+
+- e98702e: Test minor bump
+- 68d7fb1: testing something
+
 ## 1.1.0-next.0
 
 ### Minor Changes
