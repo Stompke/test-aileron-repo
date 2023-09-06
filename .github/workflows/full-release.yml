@@ -24,9 +24,9 @@ jobs:
           else
               echo "NEED=false" >> "$GITHUB_ENV"
           fi
-      - name: Skip Deploy?
-        if: env.NEED != 'true'
-        run: echo "Only pushing to 'master' causes automatic deployment"
+      - name: Skip the deploy
+        if: env.NEED == 'true'
+        run: echo "Correct Key Entered, starting deploy..."
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
