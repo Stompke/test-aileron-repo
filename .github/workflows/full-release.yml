@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Set env NEED
         run: |
-          if [[ $github.event.inputs.key == $secrets.RELEASE_KEY ]]; then
+          if [[ "${{ github.event.inputs.key }}" == "$secrets.RELEASE_KEY" ]]; then
               echo "NEED=true" >> "$GITHUB_ENV"
           else
               echo "NEED=false" >> "$GITHUB_ENV"
@@ -27,6 +27,7 @@ jobs:
       - name: Skip the deploy
         if: env.NEED == 'true'
         run: echo "Correct Key Entered, starting deploy..."
+
 
   exit-pre-release:
     name: Exit Release
