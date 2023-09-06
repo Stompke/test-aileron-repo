@@ -16,24 +16,21 @@ jobs:
   check-key:
     name: Check Key for Release
     runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.check.conclusion }}
     steps:
-      - name: Set env NEED
+      - id: check
         run: |
           if [[ "${{ github.event.inputs.key }}" == "$secrets.RELEASE_KEY" ]]; then
-              echo "NEED=true" >> "$GITHUB_ENV"
+              exit 0;
           else
-              echo "NEED=false" >> "$GITHUB_ENV"
+              exit 1;
           fi
-      - name: Skip the deploy
-        if: env.NEED == 'true'
-        run: echo "Correct Key Entered, starting deploy..."
-
-
   exit-pre-release:
     name: Exit Release
     runs-on: ubuntu-latest
     needs: check-key
-    if: env.NEED == 'true'
+    if: needs.check-key.outputs.status == 'success'
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
