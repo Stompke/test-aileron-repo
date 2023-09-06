@@ -32,6 +32,7 @@ jobs:
     name: Exit Release
     runs-on: ubuntu-latest
     depends-on: check-key
+    if: env.NEED == 'true'
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
