@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@shawnponents/is-even": "1.1.0",
+    "@shawnponents/is-odd": "1.2.0"
+  },
+  "changesets": [
+    "olive-mice-greet"
+  ]
+}
