@@ -1,5 +1,15 @@
 # @shawnponents/is-odd
 
+## 2.0.0-next.0
+
+### Major Changes
+
+- 7b10497: major for is odd
+
+### Patch Changes
+
+- 7b10497: Patch for is odd
+
 ## 1.3.0
 
 ### Minor Changes
