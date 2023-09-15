@@ -1,0 +1,36 @@
+{
+  "changesets": [
+    {
+      "releases": [
+        {
+          "name": "@shawnponents/is-even",
+          "type": "minor"
+        }
+      ],
+      "summary": "some stuff here",
+      "id": "itchy-geckos-end"
+    }
+  ],
+  "releases": [
+    {
+      "name": "@shawnponents/is-even",
+      "type": "minor",
+      "oldVersion": "1.2.0-next.0",
+      "changesets": [
+        "itchy-geckos-end"
+      ],
+      "newVersion": "1.2.0"
+    }
+  ],
+  "preState": {
+    "mode": "exit",
+    "tag": "next",
+    "initialVersions": {
+      "@shawnponents/is-even": "1.1.0",
+      "@shawnponents/is-odd": "1.3.0"
+    },
+    "changesets": [
+      "itchy-geckos-end"
+    ]
+  }
+}

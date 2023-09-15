@@ -1,5 +1,11 @@
 # @shawnponents/is-even
 
+## 1.2.0
+
+### Minor Changes
+
+- 544f96d: some stuff here
+
 ## 1.2.0-next.0
 
 ### Minor Changes
