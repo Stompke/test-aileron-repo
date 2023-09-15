@@ -2,7 +2,9 @@
   "name": "shawnponents",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "update-release-notes": "node ./tools/scripts/updateReleaseNotes.js"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

@@ -53,6 +53,7 @@ jobs:
       - name: Exit pre release
         run: |
           npx changeset pre exit
+          npm run update-release-notes
           npx changeset version
           git config --global user.email "shawntompke@gmail.com"
           git config --global user.name "Shawn Tompke"
