@@ -1,6 +1,6 @@
 # 🚀 Fri Sep 15 2023 Release 🚀 
 
-## @otherponents/is-odd@2.0.0
+## @shawnponents/is-odd@2.0.0
 
 #### Major Changes
 
@@ -20,7 +20,7 @@
 
 # 🚀 Fri Sep 15 2023 Release 🚀 
 
-## @otherponents/is-even@1.2.0
+## @shawnponents/is-even@1.2.0
 
 #### Minor Changes
 

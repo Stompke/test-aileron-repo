@@ -1,4 +1,4 @@
-# @otherponents/is-even
+# @shawnponents/is-even
 
 ## 1.2.0
 

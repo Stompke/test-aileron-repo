@@ -3,7 +3,7 @@
     {
       "releases": [
         {
-          "name": "@otherponents/is-odd",
+          "name": "@shawnponents/is-odd",
           "type": "major"
         }
       ],
@@ -13,7 +13,7 @@
     {
       "releases": [
         {
-          "name": "@otherponents/is-odd",
+          "name": "@shawnponents/is-odd",
           "type": "patch"
         }
       ],
@@ -23,7 +23,7 @@
   ],
   "releases": [
     {
-      "name": "@otherponents/is-odd",
+      "name": "@shawnponents/is-odd",
       "type": "major",
       "oldVersion": "2.0.0-next.0",
       "changesets": [
@@ -37,8 +37,8 @@
     "mode": "exit",
     "tag": "next",
     "initialVersions": {
-      "@otherponents/is-even": "1.2.0",
-      "@otherponents/is-odd": "1.3.0"
+      "@shawnponents/is-even": "1.2.0",
+      "@shawnponents/is-odd": "1.3.0"
     },
     "changesets": [
       "little-hounds-live",

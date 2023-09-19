@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'is-odd',
+  displayName: 'is-odd-havas',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
