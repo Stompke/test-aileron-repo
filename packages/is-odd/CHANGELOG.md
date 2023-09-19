@@ -1,4 +1,4 @@
-# @shawnponents/is-odd
+# @otherponents/is-odd
 
 ## 2.0.0
 

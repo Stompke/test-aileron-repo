@@ -3,7 +3,7 @@
     {
       "releases": [
         {
-          "name": "@shawnponents/is-odd",
+          "name": "@otherponents/is-odd",
           "type": "minor"
         }
       ],
@@ -13,7 +13,7 @@
   ],
   "releases": [
     {
-      "name": "@shawnponents/is-odd",
+      "name": "@otherponents/is-odd",
       "type": "minor",
       "oldVersion": "0.1.0-next.0",
       "changesets": [
@@ -26,9 +26,9 @@
     "mode": "pre",
     "tag": "next",
     "initialVersions": {
-      "@shawnponents/source": "0.0.0",
-      "@shawnponents/is-even": "0.0.1",
-      "@shawnponents/is-odd": "0.0.1"
+      "@otherponents/source": "0.0.0",
+      "@otherponents/is-even": "0.0.1",
+      "@otherponents/is-odd": "0.0.1"
     },
     "changesets": [
       "brave-sloths-deny",

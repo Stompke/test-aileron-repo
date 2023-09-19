@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@shawnponents/is-even": ["packages/is-even/src/index.ts"],
-      "@shawnponents/is-odd": ["packages/is-odd/src/index.ts"]
+      "@otherponents/is-even": ["packages/is-even/src/index.ts"],
+      "@otherponents/is-odd": ["packages/is-odd/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

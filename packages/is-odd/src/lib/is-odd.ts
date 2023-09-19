@@ -1,4 +1,4 @@
-import { isEven } from '@shawnponents/is-even';
+import { isEven } from '@otherponents/is-even';
 
 
 export function isOdd(x: number): boolean {

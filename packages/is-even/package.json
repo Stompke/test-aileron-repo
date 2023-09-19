@@ -1,5 +1,5 @@
 {
-  "name": "@shawnponents/is-even",
+  "name": "@otherponents/is-even",
   "version": "1.2.0",
   "publishConfig": {
     "access": "public",
