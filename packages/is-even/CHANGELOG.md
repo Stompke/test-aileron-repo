@@ -1,5 +1,11 @@
 # @shawnponents/is-even
 
+## 1.3.0-next.0
+
+### Minor Changes
+
+- 24b049e: testing run
+
 ## 1.2.0
 
 ### Minor Changes
