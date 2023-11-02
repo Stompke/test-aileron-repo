@@ -1,3 +1,19 @@
+# 🚀 Thu Nov 02 2023 Release 🚀 
+
+## @shawnponents/is-even@1.3.0
+
+#### Minor Changes
+
+- testing run
+
+
+
+
+
+
+
+
+
 # 🚀 Fri Sep 15 2023 Release 🚀 
 
 ## @shawnponents/is-odd@2.0.0
