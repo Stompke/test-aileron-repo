@@ -1,3 +1,19 @@
+# 🚀 Fri Nov 03 2023 Release 🚀 
+
+## @shawnponents/is-odd@2.1.0
+
+#### Minor Changes
+
+- Odd bump dude
+
+
+
+
+
+
+
+
+
 # 🚀 Thu Nov 02 2023 Release 🚀 
 
 ## @shawnponents/is-even@1.3.0

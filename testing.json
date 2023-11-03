@@ -3,34 +3,34 @@
     {
       "releases": [
         {
-          "name": "@shawnponents/is-even",
+          "name": "@shawnponents/is-odd",
           "type": "minor"
         }
       ],
-      "summary": "testing run",
-      "id": "weak-plums-scream"
+      "summary": "Odd bump dude",
+      "id": "polite-jars-film"
     }
   ],
   "releases": [
     {
-      "name": "@shawnponents/is-even",
+      "name": "@shawnponents/is-odd",
       "type": "minor",
-      "oldVersion": "1.3.0-next.0",
+      "oldVersion": "2.1.0-next.0",
       "changesets": [
-        "weak-plums-scream"
+        "polite-jars-film"
       ],
-      "newVersion": "1.3.0"
+      "newVersion": "2.1.0"
     }
   ],
   "preState": {
     "mode": "exit",
     "tag": "next",
     "initialVersions": {
-      "@shawnponents/is-even": "1.2.0",
+      "@shawnponents/is-even": "1.3.0",
       "@shawnponents/is-odd": "2.0.0"
     },
     "changesets": [
-      "weak-plums-scream"
+      "polite-jars-film"
     ]
   }
 }

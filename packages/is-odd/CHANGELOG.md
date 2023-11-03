@@ -1,5 +1,11 @@
 # @shawnponents/is-odd
 
+## 2.1.0
+
+### Minor Changes
+
+- c1336d0: Odd bump dude
+
 ## 2.1.0-next.0
 
 ### Minor Changes
