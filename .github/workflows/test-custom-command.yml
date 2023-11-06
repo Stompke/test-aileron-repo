@@ -24,6 +24,6 @@ jobs:
       - run: |
           npm ci
           npm rebuild && npm run prepare --if-present
-        run: ${{ github.event.inputs.customCommand }}
+      - run: ${{ github.event.inputs.customCommand }}
         env:
           NODE_ENV: 'production'
